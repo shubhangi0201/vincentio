@@ -1,0 +1,456 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Home {% endblock %}
+{% block body %}
+<style>
+  .container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .mid h5 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #555;
+  }
+
+  .mid button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .mid button:hover {
+    background-color: #0056b3;
+  }
+
+  .mid p {
+    margin-top: 12px;
+    font-size: 0.9rem;
+  }
+  .container2 {
+    background-color: #8ca9f6;
+    padding: 20px;
+    margin-top: 20vh;
+    margin-right: 50vw;
+    margin-left: 50vw;
+    border-radius: 2%;
+    margin-bottom: 20vh;
+    max-width: 100%;
+  }
+  .row1 {
+    display: flex;
+  }
+  .row1 p {
+    justify-content: center;
+    align-item: center;
+    margin-right: 5px;
+    margin-left: 10px;
+  }
+  .row2 {
+    display: flex;
+  }
+  .row21 {
+    max-width: 100%;
+    min-height: 35vh;
+    max-height: 25vh;
+    min-width: 20vw;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    border-radius: 18%;
+  }
+  .row22 {
+    max-width: 100%;
+    min-height: 80vh;
+    max-height: 80vh;
+    min-width: 35vw;
+
+    border-radius: 5%;
+  }
+  .container3 {
+    background-color: #8ca9f6;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .row31 {
+    min-width: 82vh;
+    font-size: 5vh;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+  .search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    padding: 15px;
+    width: 60vw;
+    margin-left: 25vw;
+  }
+  .search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 50px;
+  }
+  .search-button {
+    background-color: #f4a261;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .row32 {
+    margin-top: 3vh;
+    margin-bottom: 15vh;
+    font-size: 1.5vh;
+  }
+  .container4 {
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    margin-top: -10vh;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .row41 {
+    min-width: 50vw;
+    margin-top: 2vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    font-size: 4vh;
+    line-height: 5vh;
+    text-align: start;
+  }
+  .row42 {
+    margin-top: 2vw;
+    margin-left: 10vw;
+    min-width: 30vw;
+    margin-right: 10vw;
+    text-align: start;
+  }
+  .row441 {
+    display: flex;
+    flex-direction: row;
+  }
+  .container5 {
+    display: flex;
+    justify-content: center;
+    /* align-content: center; */
+    background-color: purple;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .row51 {
+    margin-top: 10vh;
+    margin-bottom: 20vh;
+    display: flex;
+  }
+  .container6{
+    background-color:blue;
+    display: flex;
+  }
+  .row61{
+    margin-left:5vw;
+  }
+</style>
+
+<div class="container1">
+  <div class="mid">
+    <p
+      style="
+        font-size: 110px;
+        line-height: 15vh;
+        margin-top: 10vh;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        max-width: 75vw;
+      "
+    >
+      Create a Website Without Limits
+    </p>
+    <h5
+      style="
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        max-width: 35vw;
+        margin-left: 20vw;
+      "
+    >
+      Bring your vision to life with the website builder that gives you the
+      tools you need to succeed.
+    </h5>
+    <button style="background: aliceblue; border-radius: 25px">
+      Get Started
+    </button>
+    <p>Start for free. No Credit card</p>
+  </div>
+  <div class="container2">
+    <div class="row1">
+      <img
+        src="{% static '/image2.jpg' %}"
+        style="max-width: 100%; min-height: 20px; max-height: 10px"
+      />
+      <p>Home</p>
+      <p>shop</p>
+      <p>blog</p>
+      <p>about</p>
+    </div>
+    <div class="row2">
+      <div style="flex-direction: column">
+        <img
+          src="{% static 'image3.avif' %}"
+          class="row21"
+          style="margin-bottom: 2vw"
+        />
+        <img src="{% static 'image2.jpg' %}" class="row21" />
+        <div
+          style="
+            max-width: 15vw;
+            margin-left: 1vw;
+            text-align: start;
+            margin-top: 1vh;
+          "
+        >
+          Forward- thinking Design. Sustainable Crafttmanship
+        </div>
+        <div style="border: 1px solid black">SHOP NEW COLECTION</div>
+      </div>
+
+      <img src="{% static 'image5.avif' %}" class="row22" />
+      <div style="flex-direction: column">
+        <img src="{% static 'image4.avif' %}" class="row21" />
+        <div
+          style="
+            max-width: 15vw;
+            margin-left: 1vw;
+            text-align: start;
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+          "
+        >
+          Consult with Our Interior Deginers
+        </div>
+        <img src="{% static 'image1.avif' %}" class="row21" />
+      </div>
+    </div>
+  </div>
+  <div class="container3">
+    <div class="row31">Get the perfect domain for your site</div>
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Type here..." />
+      <button class="search-button">Search →</button>
+    </div>
+    <div class="row32">
+      The initial purchase of a Wix annual Premium plan comes with a new custom
+      domain free for one year.
+    </div>
+  </div>
+  <div class="container4">
+    <div class="row441">
+      <div class="row41">Start by chatting with our AI website builder</div>
+      <div class="row42">
+        <div class="row43">
+          Describe your business and preferences and instantly get a fully
+          functional website that you can customize to your liking.
+        </div>
+        <button
+          style="
+            background: aliceblue;
+            border-radius: 25px;
+            font-size: 3vh;
+            margin-top: 2vh;
+            padding-right: 2vh;
+            padding-left: 2vh;
+          "
+        >
+          Get Started
+        </button>
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        margin-top: 20vh;
+        overflow-x: scroll;
+        height: 40vh;
+        width: 100%;
+        overflow-y: hidden;
+      "
+    >
+      <img
+        src="{% static 'image3.avif' %}"
+        class="row21"
+        style="margin-bottom: 2vw"
+      />
+      <img
+        src="{% static 'image3.avif' %}"
+        class="row21"
+        style="margin-bottom: 2vw"
+      />
+      <img
+        src="{% static 'image3.avif' %}"
+        class="row21"
+        style="margin-bottom: 2vw"
+      />
+      <img
+        src="{% static 'image3.avif' %}"
+        class="row21"
+        style="margin-bottom: 2vw"
+      />
+      <img
+        src="{% static 'image3.avif' %}"
+        class="row21"
+        style="margin-bottom: 2vw"
+      />
+      <img
+        src="{% static 'image3.avif' %}"
+        class="row21"
+        style="margin-bottom: 2vw"
+      />
+      <img
+        src="{% static 'image3.avif' %}"
+        class="row21"
+        style="margin-bottom: 2vw"
+      />
+    </div>
+  </div>
+  <div class="container5">
+    <div class="row51">
+      <div style="text-align: start">
+        <div style="font-size: 7vh; line-height: 7v; margin-bottom: 5vh">
+          Customize to<br />
+          make it your own
+        </div>
+        <h5>Intuitive drag and drop</h5>
+        <div style="display: none">
+          Effortlessly add and arrange your text, visuals, buttons and even
+          entire sections.
+        </div>
+        <h5>Build-in AI tools</h5>
+        <div style="display: none">
+          Generate and edit custom images, text, sections, layouts and more in
+          no time.
+        </div>
+        <h5>Advanced design features</h5>
+        <div style="display: none">
+          Make your site stand out with scroll effects, animations and
+          interactions—no code needed.
+        </div>
+      </div>
+      <div>
+        <video
+          id="myVideo"
+          autoplay
+          muted
+          style="min-height: 60vh; max-width: 75vw; margin-left: 17vw"
+        >
+          <source src="./static/mov_bbb.mp4" type="video/mp4" />
+          <source src="./static/mov_bbb.ogg" type="video/ogg" />
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container6">
+  <div class="row61">
+    <div>Run your business from <br />one dashboard</div>
+
+    <div style="margin-bottom: 2vh">
+      <div id="payments" onclick="updateContent('description', 'row63')">
+        Payments
+      </div>
+      <div id="description" >
+        Accept payments, send invoices, and track it all with ease.
+      </div>
+    </div>
+
+    <div style="margin-bottom: 2vh">
+      <div id="cmrsolution" onclick="updateContent('description1', 'row64')">
+        cmrsolution
+      </div>
+      <div id="description1" style="display: none">
+        Attract leads and engage with customers with a full CRM suite.
+      </div>
+    </div>
+
+    <div style="margin-bottom: 2vh">
+      <div id="customautomation" onclick="updateContent('description2', 'row65')">
+        customautomation
+      </div>
+      <div id="description2" style="display: none">
+        Work smarter and save time with automated emails, reminders, and more.
+      </div>
+    </div>
+
+    <div style="margin-bottom: 2vh">
+      <div id="data" onclick="updateContent('description3', 'row66')">
+        Data & analytics
+      </div>
+      <div id="description3" style="display: none">
+        Get in-depth data insights and reports to help you make smart decisions.
+      </div>
+    </div>
+
+    <div style="margin-bottom: 2vh">
+      <div id="mobileapp" onclick="updateContent('description4', 'row67')">
+        Mobile app
+      </div>
+      <div id="description4" style="display: none">
+        Manage your day-to-day from anywhere with the Wix mobile app.
+      </div>
+    </div>
+  </div>
+
+  <div class="row62">
+    <img src="{% static 'image5.avif' %}" class="row63 image" />
+    <img src="{% static 'image5.avif' %}" class="row64 image" style="display: none;" />
+    <img src="{% static 'image5.avif' %}" class="row65 image" style="display: none;" />
+    <img src="{% static 'image5.avif' %}" class="row66 image" style="display: none;" />
+    <img src="{% static 'image5.avif' %}" class="row67 image" style="display: none;" />
+  </div>
+</div>
+
+<script>
+  function updateContent(descriptionId, imageClass) {
+    // Hide all descriptions
+    document.querySelectorAll('[id^="description"]').forEach(desc => {
+      desc.style.display = "none";
+    });
+
+    // Hide all images
+    document.querySelectorAll('.image').forEach(img => {
+      img.style.display = "none";
+    });
+
+    // Show the clicked description
+    let description = document.getElementById(descriptionId);
+    if (description) {
+      description.style.display = "block";
+    }
+
+    // Show the corresponding image
+    let image = document.querySelector('.' + imageClass);
+    if (image) {
+      image.style.display = "block";
+    }
+  }
+</script>
+{% endblock %}
