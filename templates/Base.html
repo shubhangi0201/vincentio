@@ -7,6 +7,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <style>
+    body{
+        overflow-x:hidden;
+        font-family: 'DM Sans', sans-serif;
+    }
     .container1 {
       display: flex;
       justify-content: center;
@@ -16,106 +20,370 @@
       flex-direction: column;
       
     }
-    .footer {
-        background-color: #121a2a;
-        color: #ffffff;
-        padding: 40px 0;
-    }
-    .footer a {
-        color: #00aaff;
-        text-decoration: none;
-    }
-    .footer a:hover {
-        text-decoration: underline;
-    }
-    .social-icons a {
-        margin-right: 15px;
-        color: #00aaff;
-        font-size: 20px;
-    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+  }
+  .navbar {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 0 3vw;
+    position: relative;
+    
+}
+
+.logo {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.nav-item {
+    font-size: 1.2vw;
+    cursor: pointer;
+    position: relative;
+}
+.nav-links a {
+    text-decoration: none;
+    color:black;
+}
+.signin-btn {
+    padding: 1vh 2vw;
+    background-color: blue;
+    color: white;
+    border: none;
+    font-size: 1.2vw;
+    cursor: pointer;
+    border-radius: 1vw;
+}
+
+/* Dropdown */
+.dropdown {
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    background-color: white;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+    z-index:3;
+    
+}
+
+.dropdown-content {
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    padding: 2vh 3vw;
+    justify-content: space-around
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.row {
+    display: flex;
+    gap: 2vw;
+    
+}
+
+.box {
+    width: 12vw;
+    
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 1vw;
+    font-weight: bold;
+    text-align: flex-start;
+    padding: 1vh;
+    border-radius: vw;
+    transition: background 0.3s;
+    margin-top:2vh;
+}
+
+.box:hover {
+    background-color: #bbb;
+}
+
+.box a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 1vh;
+}
+.innercontent{
+    margin-top:1vh;
+    opacity: 0.5;
+    font-size: 0.8vw;
+}
+
+/* Show dropdown */
+.show {
+    height: 60vh;
+}
+  
+p{
+    margin-bottom:0.2rem;
+}
+ 
+
 </style>
   <body>
-    <header> <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Vincentio</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/Home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/About">About</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              
-            </ul>
-            
-                <button class="btn btn-outline-success mx-2" type="submit" style="background-color: blue; color: white;">Get Started</button>
-
-            
-          </div>
+    <div class="navbar">
+       
+        <div class="nav-links">
+            <div class="logo"><a href="#">Vincentio</a></div>
+            <div class="nav-item" id="product">Product</div>
+            <div class="nav-item" id="solution">Solution</div>
+            <div class="nav-item" id="resources">Resouces</div>
+            <div class="nav-item"><a href="#">Pricing</a></div>
+            <div class="nav-item"><a href="#">studio</a></div>
+            <div class="nav-item"><a href="#">Enterprise</a></div>
+           
         </div>
-      </nav></header>
-   
+        <button class="signin-btn">Sign In</button>
+    </div>
+
+    <!-- Product Dropdown -->
+    <div class="dropdown" id="productDropdown">
+        <div class="dropdown-content">
+            <div class="row">
+                
+                <div class="column">
+                    <div class="box"><a href="#">Website Builder<div class="innercontent">Create a professional website easily</div></a></div>
+                    <div class="box"><a href="#">Logo Maker<div class="innercontent">Design a unique logo for your brand</div></a></div>
+                    <div class="box"><a href="#">Ecommerce<div class="innercontent">Sell products and manage your store</div></a></div>
+                </div>
+                <div class="column">
+                    <div class="box"><a href="#">Website Builder<div class="innercontent">Create a professional website easily</div></a></div>
+                    <div class="box"><a href="#">Logo Maker <div class="innercontent">Design a unique logo for your brand</div></a></div>
+                    <div class="box"><a href="#">Ecommerce<div class="innercontent">Sell products and manage your store</div></a></div>
+                </div>
+                <div class="column">
+                    <div class="box"><a href="#">Website Builder<div class="innercontent">Create a professional website easily</div></a></div>
+                    <div class="box"><a href="#">Logo Maker <div class="innercontent">Design a unique logo for your brand</div></a></div>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="box"><a href="#">SEO Tools <div class="innercontent">Improve your site's ranking on Google</div></a></div>
+                    <div class="box"><a href="#">Marketing Solutions <div class="innercontent">Boost engagement and reach more customers</div></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Solution Dropdown -->
+    <div class="dropdown" id="solutionDropdown">
+        <div class="dropdown-content">
+            <div class="row">
+                
+                <div class="column">
+                    <div class="box"><a href="#">Website Builder<div class="innercontent">Create a professional website easily</div></a></div>
+                    <div class="box"><a href="#">Logo Maker<div class="innercontent">Design a unique logo for your brand</div></a></div>
+                    <div class="box"><a href="#">Ecommerce<div class="innercontent">Sell products and manage your store</div></a></div>
+                </div>
+                <div class="column">
+                    <div class="box"><a href="#">Website Builder<div class="innercontent">Create a professional website easily</div></a></div>
+                    <div class="box"><a href="#">Logo Maker <div class="innercontent">Design a unique logo for your brand</div></a></div>
+                   
+                </div>
+                <div class="column">
+                    <div class="box"><a href="#">Website Builder<div class="innercontent">Create a professional website easily</div></a></div>
+                    <div class="box"><a href="#">Logo Maker <div class="innercontent">Design a unique logo for your brand</div></a></div>
+                     <div class="box"><a href="#">Ecommerce<div class="innercontent">Sell products and manage your store</div></a></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="box"><a href="#">SEO Tools <div class="innercontent">Improve your site's ranking on Google</div></a></div>
+                    <div class="box"><a href="#">Marketing Solutions <div class="innercontent">Boost engagement and reach more customers</div></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resouces Dropdown -->
+    <div class="dropdown" id="resoucesDropdown">
+        <div class="dropdown-content">
+            <div class="row">
+                <div class="column">
+                    <div class="box"><a href="#">Website Builder<div class="innercontent">Create a professional website easily</div></a></div>
+                    <div class="box"><a href="#">Logo Maker<div class="innercontent">Design a unique logo for your brand</div></a></div>
+                    <div class="box"><a href="#">Ecommerce<div class="innercontent">Sell products and manage your store</div></a></div>
+                </div>
+                <div class="column">
+                    <div class="box"><a href="#">Website Builder<div class="innercontent">Create a professional website easily</div></a></div>
+                    <div class="box"><a href="#">Logo Maker <div class="innercontent">Design a unique logo for your brand</div></a></div>
+                   
+                </div>
+                <div class="column">
+                    <div class="box"><a href="#">Website Builder<div class="innercontent">Create a professional website easily</div></a></div>
+                    <div class="box"><a href="#">Logo Maker <div class="innercontent">Design a unique logo for your brand</div></a></div>
+                     <div class="box"><a href="#">Ecommerce<div class="innercontent">Sell products and manage your store</div></a></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="box"><a href="#">SEO Tools <div class="innercontent">Improve your site's ranking on Google</div></a></div>
+                    <div class="box"><a href="#">Marketing Solutions <div class="innercontent">Boost engagement and reach more customers</div></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
       {% block body %}{% endblock %}
       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
-  <footer class="footer">
-    <div class="container1">
-        <div class="row">
-            <div class="col-md-3">
-                <h5>About Us</h5>
-                <p>Deals in IT Infrastructure setup, Data Center Design, Cloud Implementation, etc. <a href="#">more</a></p>
-                <div class="social-icons">
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-twitter"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                    <a href="#"><i class="bi bi-youtube"></i></a>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <h5>Contact Us</h5>
-                <p><i class="bi bi-telephone"></i> +91 1294159609</p>
-                <p><i class="bi bi-geo-alt"></i> 297 Sector 30, Faridabad, Haryana 121003</p>
-                <p><i class="bi bi-envelope"></i> <a href="mailto:support@vincentio.in">support@vincentio.in</a></p>
-            </div>
-
-            <div class="col-md-3">
-                <h5>Our Services</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Public Cloud</a></li>
-                    <li><a href="#">Private Cloud</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-3">
-                <h5>Quick Link</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Team</a></li>
-                </ul>
-            </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <footer style="background-color: #f8f8f8; padding: 2vh 5vw; font-family: Arial, sans-serif;">
+        <div style="display: flex;  justify-content: space-between; max-width: 90vw; margin: auto; font-size:2vh;">
+          <div style="flex: 1; min-width: 15vw; ">
+            <h3  style="font-size:5vh">Product</h3>
+            <p>Website Templates</p>
+            <p>Website Builder</p>
+            <p>Website Design</p>
+            <p>Wix Features</p>
+            <p>App Market</p>
+            <p>Web Hosting</p>
+            <p>Domain Names</p>
+            <p>Website Accessibility</p>
+            <p>Mobile App Builder</p>
+          </div>
+          <div style="flex: 1; min-width: 15vw; margin-bottom: 2vh;">
+            <h3  style="font-size:5vh">Solutions</h3>
+            <p>Online Store</p>
+            <p>Online Booking</p>
+            <p>Restaurant Website</p>
+            <p>Blog Website</p>
+            <p>Portfolio Website</p>
+            <p>eCommerce Website</p>
+            <p>Wix Studio</p>
+            <p>Enterprise Solutions</p>
+            <p>Student Website</p>
+            <p>Professional Tools</p>
+            <p>Logo Maker</p>
+          </div>
+          <div style="flex: 1; min-width: 15vw; margin-bottom: 2vh;">
+            <h3 style="font-size:5vh">Learn</h3>
+            <p>Wix Blog</p>
+            <p>Privacy and Security Hub</p>
+            <p>SEO Learning Hub</p>
+            <p>Wix Encyclopedia</p>
+          </div>
+          <div style="flex: 1; min-width: 15vw; margin-bottom: 2vh;">
+            <h3  style="font-size:5vh">Support</h3>
+            <p>Help Center</p>
+            <p>Hire a Professional</p>
+            <p>Report Abuse</p>
+            <p>System Status</p>
+          </div>
+          <div style="flex: 1; min-width: 15vw; margin-bottom: 2vh; margin-right:1vw">
+            <h3  style="font-size:5vh">Company</h3>
+            <p>Press & Media</p>
+            <p>Investor Relations</p>
+            <p>Wix Capital</p>
+            <p>Accessibility Statement</p>
+            <p>Patent Notice</p>
+            <p>Sitemap</p>
+            <p>Careers</p>
+          </div>
+          <div style="flex: 1; min-width: 15vw; margin-bottom: 2vh;">
+            <h3  style="font-size:5vh">WIX</h3>
+            <p>The Wix website builder offers a complete solution from enterprise-grade infrastructure and business features to advanced SEO and marketing tools—enabling anyone to create and grow online.</p>
+            <p><b>About</b></p>
+            <p><b>Contact Us</b></p>
+          </div>
         </div>
-        <div class="text-center mt-4">
-            <p>Copyright &copy; 2020-2022. All rights reserved.</p>
+        <div style="border-top: 1px solid #ddd; text-align: center; padding-top: 2vh; margin-top: 3vh;">
+          
+          <p style="margin-top: 2vh;font-size:2vh;">Terms of Use | Privacy Policy | © 2006-2025 Wix.com, Inc</p>
         </div>
+        <div style="text-align:center;font-size:2vh;">
+        Copyright ©2020-2022 All rights reserved.
     </div>
-</footer>
+    <div style="font-size: 3vh;text-align:center;margin:2vh 0 0vh 0">
+        <a href="#" style="margin: 0 1vw; color: black;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="margin: 0 1vw; color: black;"><i class="fab fa-youtube"></i></a>
+        <a href="#" style="margin: 0 1vw; color: black;"><i class="fab fa-tiktok"></i></a>
+        <a href="#" style="margin: 0 1vw; color: black;"><i class="fab fa-pinterest"></i></a>
+        <a href="#" style="margin: 0 1vw; color: black;"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" style="margin: 0 1vw; color: black;"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      </footer>
+      
+
+    
+
+    
+
+  <script>
+    const navItems = document.querySelectorAll(".nav-item");
+    const dropdowns = document.querySelectorAll(".dropdown");
+
+    let activeDropdown = null;
+    let isDropdownClicked = false;
+
+    function showDropdown(dropdown) {
+        if (activeDropdown) activeDropdown.classList.remove("show");
+        dropdown.classList.add("show");
+        activeDropdown = dropdown;
+    }
+
+    function hideDropdown() {
+        if (activeDropdown) activeDropdown.classList.remove("show");
+        activeDropdown = null;
+    }
+
+    
+    
+    navItems.forEach((item, index) => {
+        item.addEventListener("mouseenter", () => {
+            if (!isDropdownClicked) {
+                showDropdown(dropdowns[index]);
+            }
+        });
+
+        // Close dropdown when hovering off the navbar (outside of the dropdown)
+        item.addEventListener("mouseleave", () => {
+            if (!isDropdownClicked) {
+                hideDropdown();
+            }
+        });
+    });
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener("mouseenter", () => {
+            dropdown.classList.add("show");
+        });
+    
+        // Remove the "show" class when the mouse leaves the dropdown
+        dropdown.addEventListener("mouseleave", () => {
+            dropdown.classList.remove("show");
+        });
+    });
+    
+</script></body>
 </html>

@@ -1,0 +1,54 @@
+<div class="mid">
+    <div class="row2">
+      <div style="">
+        <img src="{% static 'image3.avif' %}" class="scroll img1" data-rateY="7" data-rateX="" data-direction="horizontal"/>
+        <img src="{% static 'image2.jpg' %}" class="scroll img2" data-rateY="5" data-rateX="1" data-direction="horizontal" />
+        </div>
+    </div>
+    <div><p
+      style="
+        font-size: 13vh;
+        line-height: 15vh;
+        margin-top: 5vh;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      "
+    >
+      Create a Website<br> Without Limits
+    </p>
+    <div
+      style="
+       
+        font-size: 2.7vh;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        line-height: 1.2 !important;
+      "
+    >
+      Bring your vision to life with the website builder that gives you the<br>
+      tools you need to succeed.
+  </div>
+    <button
+      style="
+        background: blue;
+        border-radius: 25vw;
+        height: 4vw;
+        width: 14vw;
+        font-size: 2vh;
+        margin-top:2vh;
+        padding:1vh;
+      "
+    >
+      Get Started
+    </button>
+    <p style="margin-top: 3vh; font-size: 2vh">
+      Start for free. No Credit card
+    </p> </div>
+     <div><div style="flex-direction: column;">
+    <img src="{% static 'image4.avif' %}"class="scroll img3" data-rateY="1" data-rateX="2" data-direction="horizontal" />
+   
+    <img src="{% static 'image1.avif' %}" class="scroll img4" data-rateY="2" data-rateX="6" data-direction="horizontal" />
+  </div></div>
+  </div>

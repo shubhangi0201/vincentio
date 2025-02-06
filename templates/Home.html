@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load static %} {% block title %}Home {% endblock %}
 {% block body %}
 <style>
-  .container1 {
+  .container11 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,21 +9,26 @@
     flex-direction: column;
     min-width: 100%;
     max-width: 100%;
+    background: radial-gradient(circle,rgb(168, 206, 226),rgb(242, 246, 248));
+
+  }
+  .mid{
+    display:flex;
   }
   .mid h5 {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
     color: #555;
   }
 
   .mid button {
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 2vh 3vh;
+    font-size: 1vh;
     color: #fff;
     background-color: #007bff;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 5vh;
+    
   }
 
   .mid button:hover {
@@ -31,18 +36,18 @@
   }
 
   .mid p {
-    margin-top: 12px;
+    margin-top: 2vh;
     font-size: 0.9rem;
   }
   .container2 {
     background-color: #8ca9f6;
-    padding: 20px;
+    padding: 2vw;
     margin-top: 20vh;
-    margin-right: 50vw;
-    margin-left: 50vw;
+    margin-right: 5vw;
+    margin-left: 10vw;
     border-radius: 2%;
     margin-bottom: 20vh;
-    max-width: 100%;
+    
   }
   .row1 {
     display: flex;
@@ -50,8 +55,9 @@
   .row1 p {
     justify-content: center;
     align-item: center;
-    margin-right: 5px;
+    margin-right: 0.5vw;
     margin-left: 10px;
+    font-size:2.5vh;
   }
   .row2 {
     display: flex;
@@ -65,11 +71,30 @@
     padding-left: 1vw;
     border-radius: 18%;
   }
-  .row22 {
+  .scroll {
     max-width: 100%;
-    min-height: 80vh;
-    max-height: 80vh;
-    min-width: 35vw;
+    min-height: 25vh;
+    max-height: 25vh;
+    min-width: 15vw;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    border-radius: 18%;
+    will-change: transform;
+
+  position: absolute;
+  transition: transform 0.1s ease-out;
+  
+ 
+  
+  }
+.img1 { top: 20vh; left: 4vw; }
+.img2 { top: 60vh; left: 10vw; }
+.img3 {  top: 60vh; left: 75vw;}
+.img4 { top: 20vh; left: 75vw; }
+  .row22 {
+    height:100vh;
+    width:40vw;
+    
 
     border-radius: 5%;
   }
@@ -77,47 +102,57 @@
     background-color: #8ca9f6;
     min-width: 100%;
     max-width: 100%;
+    height: 70vh;
   }
   .row31 {
-    min-width: 82vh;
-    font-size: 5vh;
-    margin-top: 10vh;
+    min-width: 50vw;
+    font-size: 5.5vh;
+    padding-top: 10vh;
     margin-bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    
   }
   .search-container {
-    display: flex;
-    align-items: center;
+   
+    display:flex;
+    justify-content:space-between;
     background-color: white;
-    border-radius: 50px;
-    padding: 15px;
-    width: 60vw;
-    margin-left: 25vw;
+    border-radius: 25vh;
+    padding: 1vh;
+    width:50%;
+    margin-left:25vw;
+   
+    
   }
   .search-input {
     flex: 1;
     border: none;
     outline: none;
-    padding: 15px;
-    font-size: 18px;
-    border-radius: 50px;
+    padding: 1vh;
+    font-size: 2vh;
+    border-radius: 25vh;
   }
   .search-button {
     background-color: #f4a261;
     border: none;
-    padding: 20px 40px;
-    border-radius: 50px;
-    font-size: 18px;
+    padding:1vw;
+    border-radius: 25vh;
+    font-size: 1.5vw;
     color: black;
     cursor: pointer;
     font-weight: bold;
   }
   .row32 {
     margin-top: 3vh;
-    margin-bottom: 15vh;
-    font-size: 1.5vh;
+    margin-bottom: 20vh;
+    font-size: 2vh;
+    display: flex;
+    justify-content: center;
+    
   }
   .container4 {
-    background-color: blue;
+    background-color: #153842;
     display: flex;
     flex-direction: column;
     margin-top: -10vh;
@@ -129,11 +164,11 @@
   .row41 {
     min-width: 50vw;
     margin-top: 2vw;
-    padding-left: 10vw;
-    padding-right: 10vw;
-    font-size: 4vh;
-    line-height: 5vh;
+    margin-left: 5vw;
+    font-size: 5vh;
+    line-height: 7vh;
     text-align: start;
+    color: #d1b919;
   }
   .row42 {
     margin-top: 2vw;
@@ -143,14 +178,13 @@
     text-align: start;
   }
   .row441 {
-    display: flex;
+    
     flex-direction: row;
+    justify-content:center;
+    text-align:center;
   }
   .container5 {
-    display: flex;
-    justify-content: center;
-    /* align-content: center; */
-    background-color: purple;
+    background-color: white;
     min-width: 100%;
     max-width: 100%;
   }
@@ -158,83 +192,344 @@
     margin-top: 10vh;
     margin-bottom: 20vh;
     display: flex;
+    justify-content:space-around;
   }
-  .container6{
-    background-color:blue;
+  .container6 {
+    background-color: #bf74e8;
     display: flex;
+    justify-content:space-around;
+    padding-bottom:20vh;
   }
-  .row61{
-    margin-left:5vw;
+  .action-button {
+    width: 12vw;
+    height: 6vh;
+    border-radius: 20vh;
+    border: none;
+    background-color: white;
+    font-size: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
   }
+  .arrow {
+    height: 6vh;
+    opacity: 0;
+    visibility: hidden; /* Start hidden */
+    transform: translateX(-5px); /* Start from the left */
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.arrow.show {
+    visibility: visible; /* Make it visible */
+    opacity: 1;
+    transform: translateX(0); /* Move to original position */
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s;
+}
+  .row61 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vh;
+  }
+  .image {
+    margin-top:20vh;
+    height: 50vh;
+    width: 40vw;
+    display: none;
+  }
+  .active-image {
+    display: block;
+  }
+
+  
+  .row91{
+    margin-bottom: 2vw;
+    border-radius: 2vh;
+    height: 40vh;
+    width: 31vw;
+}
+  
+
+  #description,
+  #description1,
+  #description2,
+  #description3,
+  #description4 {
+    width: 40vw;
+    max-height: 5vh;
+   
+    
+    padding-left: 0vh;
+  }
+  .description {
+    display: none; /* Hidden by default */
+    opacity: 0;
+    transform: translateY(-20vw); /* Start from below */
+    transition: transform 0.9s ease, opacity 0.4s ease;
+}
+
+.description.show {
+    display: block;
+    opacity: 1; /* Fade in */
+    transform: translatex(5vw); /* Move into place */
+    transition: transform 2s ease, opacity 0.4s ease;
+}
+  #payments:hover {
+    transform: scale(1.05); /* Scale the button when hovered */
+  }
+  #cmrsolution:hover {
+    transform: scale(1.05); /* Scale the button when hovered */
+  }
+  #customautomation:hover {
+    transform: scale(1.05); /* Scale the button when hovered */
+  }
+  #data:hover {
+    transform: scale(1.05); /* Scale the button when hovered */
+  }
+  #mobileapp:hover {
+    transform: scale(1.05); /* Scale the button when hovered */
+  }
+  .container8{
+    background-color:darkslategrey;
+    
+    text-align:center;
+    
+  }
+  .row81{
+    border-radius:10vh;
+    margin:3vh;
+    height:50vh;
+  }
+  .conatiner9 {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(240, 245, 245);
+            padding: 10vh 5vh 15vh 5vh;
+            flex-wrap: wrap; /* Ensures responsiveness without media queries */
+            text-align: left;
+            gap: 5vh; /* Adds spacing when wrapped */
+        }
+
+        .conatiner9 div:first-child {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .conatiner9 div:first-child > div {
+            font-size: 5vh;
+            width: 18vw;
+        }
+
+        .conatiner9 div:first-child > div:nth-child(2) {
+            font-size: 3vh;
+            width: 18vw;
+            margin-top: 2vh;
+        }
+
+        .conatiner9 button {
+            border-radius: 5vw;
+            border: none;
+            background-color: black;
+            color: white;
+            padding: 1vh 4vh;
+            margin-top: 1vw;
+            font-size: 3vh;
+        }
+
+        .conatiner9 ol {
+            line-height: 7vh;
+            font-size: 1vw;
+            max-width: 50vw;
+        }
+
+        .conatiner9 li {
+            border-bottom: 0.01vh solid #ccc;
+            padding-bottom: 1vh;
+            list-style-position: inside;
+        }
+
+        .conatiner9 li:last-child {
+            border-bottom: none;
+        }
+  .container10{
+    margin: 2vh 2vh 7vh 2vh;
+  }
+  .container12 {
+    background-color: #142238;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    padding: 5vh 0 15vh;
+
+}
+
+/* Heading */
+.container12 div:first-child {
+    font-size: 7vh;
+    padding: 1vh;
+}
+
+/* Centering the navigation container */
+.nav-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.nav-container {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+/* Styling for each navigation link */
+.nav-container a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: white;
+    border: 0.5vh solid white;
+    padding: 3vh;
+    border-radius: 3vh;
+    width: 100%;
+    transition: 0.3s;
+}
+
+/* Hover effect: Change text and border color to yellow */
+.nav-container a:hover {
+    background-color:#9fa836;
+    border-color: black;
+}
+
+
+section {
+  height: 100%;
+}
+
+
 </style>
 
-<div class="container1">
-  <div class="mid">
-    <p
+<div class="container11">
+  <div style="display:flex"> <div class="mid">
+    
+      
+        <img src="{% static 'image3.avif' %}" class="scroll img1" style=" width:10vw;margin-left:2vw;"data-ratey="1.1"vh data-ratex="0.07" data-direction="horizontal"/>
+        <img src="{% static 'image2.jpg' %}" class="scroll img2"  style=" width:10vw;margin-left:2vw;"data-ratey="1" data-ratex="-0.01" data-direction="horizontal" />
+        
+    
+    <div><p
       style="
-        font-size: 110px;
+        font-size: 13vh;
         line-height: 15vh;
         margin-top: 10vh;
-        display: flex;
         justify-content: center;
         text-align: center;
-        max-width: 75vw;
+        font-size:10vh;
+        margin-left:20vw;
+        margin-right:20vw;
+       
+       
       "
     >
-      Create a Website Without Limits
+      Create a Website</br> Without Limits
     </p>
-    <h5
+    <div
       style="
-        display: flex;
+       
+        font-size: 2.7vh;
         justify-content: center;
         text-align: center;
-        max-width: 35vw;
-        margin-left: 20vw;
+        line-height: 1.2 !important;
+        margin-top:3vh;
+        margin-right:23vw;
+        margin-left:25vw;
       "
     >
       Bring your vision to life with the website builder that gives you the
       tools you need to succeed.
-    </h5>
-    <button style="background: aliceblue; border-radius: 25px">
+  </div>
+    <button
+      style="
+        background: blue;
+        border-radius: 25vw;
+        height: 4vw;
+        width: 14vw;
+        font-size: 2vh;
+        margin-top:2vh;
+      
+        text-align:center;
+        
+        ;
+         
+      "
+    >
       Get Started
     </button>
-    <p>Start for free. No Credit card</p>
+    <p style="margin-top: 3vh; font-size: 2vh; width:50%;margin-left:23vw;
+        margin-right:23vw;">
+      Start for free. No Credit card
+    </p> </div>
+    
+      <img src="{% static 'image1.avif' %}" class="scroll img4" style=" width:10vw;margin-left:2vw;"data-ratey="1.1" data-ratex="-0.05" data-direction="horizontal" />
+    <img src="{% static 'image4.avif' %}"class="scroll img3"style=" width:10vw;margin-left:2vw;" data-ratey="1.2" data-ratex="-0.05" data-direction="horizontal" />
+   
+    
+ 
   </div>
-  <div class="container2">
+</div>
+ 
+
+  {% comment %} conatier2 {% endcomment %}
+  <section style="    height: 100%;"><div class="container2">
     <div class="row1">
       <img
         src="{% static '/image2.jpg' %}"
-        style="max-width: 100%; min-height: 20px; max-height: 10px"
+        style="max-width: 100%; min-height: 4vh; max-height: 4vh"
       />
-      <p>Home</p>
+      <p >Home</p>
       <p>shop</p>
       <p>blog</p>
       <p>about</p>
     </div>
     <div class="row2">
-      <div style="flex-direction: column">
-        <img
-          src="{% static 'image3.avif' %}"
-          class="row21"
-          style="margin-bottom: 2vw"
-        />
-        <img src="{% static 'image2.jpg' %}" class="row21" />
+      <div style="flex-direction: column ;width:25%;">
+       
         <div
           style="
-            max-width: 15vw;
-            margin-left: 1vw;
+            width:80%;
+            font-size:3vh;
+           
             text-align: start;
-            margin-top: 1vh;
+            
+            position:relative;
+            top:62vh;
           "
         >
           Forward- thinking Design. Sustainable Crafttmanship
         </div>
-        <div style="border: 1px solid black">SHOP NEW COLECTION</div>
+        <div style="
+        border:0.2vh solid black;
+         border-radius:15vw;
+          margin-top:2vh;
+          font-size:2vh;
+           position:relative;
+            top:62vh;
+            width:80%;
+          ">
+          SHOP NEW COLECTION →</div>
       </div>
 
       <img src="{% static 'image5.avif' %}" class="row22" />
       <div style="flex-direction: column">
-        <img src="{% static 'image4.avif' %}" class="row21" />
+        
         <div
           style="
             max-width: 15vw;
@@ -242,16 +537,30 @@
             text-align: start;
             margin-top: 1vh;
             margin-bottom: 1vh;
+            font-size:2.7vh;
+            width:60%;
+            position:relative;
+            top:30vh;
           "
         >
-          Consult with Our Interior Deginers
+          Consult with Our Interior Deginers  →
         </div>
-        <img src="{% static 'image1.avif' %}" class="row21" />
+        
       </div>
     </div>
+    
   </div>
+</div>
+<div>
+    
+
+ 
+</div></section>
+  
+  {% comment %} conatier3 {% endcomment %}
   <div class="container3">
-    <div class="row31">Get the perfect domain for your site</div>
+    <div class="row31">Make your website official <br>with your own domain name
+    </div>
     <div class="search-container">
       <input type="text" class="search-input" placeholder="Type here..." />
       <button class="search-button">Search →</button>
@@ -261,11 +570,15 @@
       domain free for one year.
     </div>
   </div>
+  {% comment %} conatier4 {% endcomment %}
   <div class="container4">
-    <div class="row441">
-      <div class="row41">Start by chatting with our AI website builder</div>
+    <div style="display:flex; flex-direction:row;justify-content:center;">
+      <div class="row41">
+        Start by chatting<br />
+        with our AI <br />website builder
+      </div>
       <div class="row42">
-        <div class="row43">
+        <div class="row43" style="color: #d1b919; font-size: 1.5vw">
           Describe your business and preferences and instantly get a fully
           functional website that you can customize to your liking.
         </div>
@@ -277,6 +590,8 @@
             margin-top: 2vh;
             padding-right: 2vh;
             padding-left: 2vh;
+            border:none;
+            
           "
         >
           Get Started
@@ -331,24 +646,24 @@
       />
     </div>
   </div>
+  {% comment %} conatier5 {% endcomment %}
   <div class="container5">
     <div class="row51">
-      <div style="text-align: start">
-        <div style="font-size: 7vh; line-height: 7v; margin-bottom: 5vh">
-          Customize to<br />
-          make it your own
+      <div style="text-align: start;">
+        <div style="font-size: 6vh; line-height: 7v; margin-bottom: 5vh">
+          Customize to<br />make it your own
         </div>
-        <h5>Intuitive drag and drop</h5>
+        <div style="font-size: 1.7vw">Intuitive drag and drop</div>
         <div style="display: none">
           Effortlessly add and arrange your text, visuals, buttons and even
           entire sections.
         </div>
-        <h5>Build-in AI tools</h5>
+        <div style="font-size: 1.7vw">Build-in AI tools</div>
         <div style="display: none">
           Generate and edit custom images, text, sections, layouts and more in
           no time.
         </div>
-        <h5>Advanced design features</h5>
+        <div style="font-size: 1.7vw">Advanced design features</div>
         <div style="display: none">
           Make your site stand out with scroll effects, animations and
           interactions—no code needed.
@@ -356,101 +671,410 @@
       </div>
       <div>
         <video
-          id="myVideo"
-          autoplay
-          muted
-          style="min-height: 60vh; max-width: 75vw; margin-left: 17vw"
-        >
-          <source src="./static/mov_bbb.mp4" type="video/mp4" />
-          <source src="./static/mov_bbb.ogg" type="video/ogg" />
-          Your browser does not support HTML5 video.
-        </video>
+        id="myVideo"
+        loop autoplay
+        muted
+        style="min-height: 43vh; max-width: 50vw;"
+      >
+        <source src="./static/mov_bbb.mp4" type="video/mp4" />
+        <source src="./static/mov_bbb.ogg" type="video/ogg" />
+      </video>
       </div>
     </div>
   </div>
-</div>
+
+{% comment %} conatier6 {% endcomment %}
 <div class="container6">
-  <div class="row61">
+  <div class="row61" style="margin-top: 15vh; font-size: 6vh">
     <div>Run your business from <br />one dashboard</div>
 
-    <div style="margin-bottom: 2vh">
-      <div id="payments" onclick="updateContent('description', 'row63')">
-        Payments
+    <div style="display: flex; flex-direction: column; gap: 1vh;">
+      <!-- Payments Button -->
+      <div style="display: flex; align-items: center;">
+        <div id="arrow1" class="arrow" style="font-size: 4vh; margin-right: 1vw;">→</div>
+        <button class="action-button" onclick="updateContent('description', 'row63', 'arrow1')">
+          <div id="payments" class="clickable">Payments</div>
+        </button>
       </div>
-      <div id="description" >
+      <div id="description" class="description" style=" font-size: 2.4vh;" >
         Accept payments, send invoices, and track it all with ease.
       </div>
-    </div>
 
-    <div style="margin-bottom: 2vh">
-      <div id="cmrsolution" onclick="updateContent('description1', 'row64')">
-        cmrsolution
+      <!-- CRM Solution Button -->
+      <div style="display: flex; align-items: center;">
+        <div id="arrow2" class="arrow" style="font-size: 4vh;  margin-right: 1vw;">→</div>
+        <button class="action-button" onclick="updateContent('description1', 'row64', 'arrow2')">
+          <div id="cmrsolution" class="clickable">CRM Solution</div>
+        </button>
       </div>
-      <div id="description1" style="display: none">
+      <div id="description1" style="font-size: 2.4vh" class="description" ;>
         Attract leads and engage with customers with a full CRM suite.
       </div>
-    </div>
 
-    <div style="margin-bottom: 2vh">
-      <div id="customautomation" onclick="updateContent('description2', 'row65')">
-        customautomation
+      <!-- Custom Automation Button -->
+      <div style="display: flex; align-items: center;">
+        <div id="arrow3" class="arrow" style="font-size: 4vh; margin-right: 1vw;">→</div>
+        <button class="action-button" onclick="updateContent('description2', 'row65', 'arrow3')">
+          <div id="customautomation" class="clickable">Custom Automation</div>
+        </button>
       </div>
-      <div id="description2" style="display: none">
+      <div id="description2" style="font-size: 2.4vh" class="description">
         Work smarter and save time with automated emails, reminders, and more.
       </div>
-    </div>
 
-    <div style="margin-bottom: 2vh">
-      <div id="data" onclick="updateContent('description3', 'row66')">
-        Data & analytics
+      <!-- Data & Analytics Button -->
+      <div style="display: flex; align-items: center;">
+        <div id="arrow4" class="arrow" style="font-size: 4vh;  margin-right: 1vw;">→</div>
+        <button class="action-button" onclick="updateContent('description3', 'row66', 'arrow4')">
+          <div id="data" class="clickable">Data & Analytics</div>
+        </button>
       </div>
-      <div id="description3" style="display: none">
+      <div id="description3" style="font-size: 2.4vh" class="description" >
         Get in-depth data insights and reports to help you make smart decisions.
       </div>
-    </div>
 
-    <div style="margin-bottom: 2vh">
-      <div id="mobileapp" onclick="updateContent('description4', 'row67')">
-        Mobile app
+      <!-- Mobile App Button -->
+      <div style="display: flex; align-items: center;">
+        <div id="arrow5" class="arrow" style="font-size: 4vh;  margin-right: 1vw;">→</div>
+        <button class="action-button" onclick="updateContent('description4', 'row67', 'arrow5')">
+          <div id="mobileapp" class="clickable">Mobile App</div>
+        </button>
       </div>
-      <div id="description4" style="display: none">
+      <div id="description4" style="font-size: 2.4vh" class="description" >
         Manage your day-to-day from anywhere with the Wix mobile app.
       </div>
     </div>
   </div>
 
+  <!-- Image Section -->
   <div class="row62">
-    <img src="{% static 'image5.avif' %}" class="row63 image" />
-    <img src="{% static 'image5.avif' %}" class="row64 image" style="display: none;" />
-    <img src="{% static 'image5.avif' %}" class="row65 image" style="display: none;" />
-    <img src="{% static 'image5.avif' %}" class="row66 image" style="display: none;" />
-    <img src="{% static 'image5.avif' %}" class="row67 image" style="display: none;" />
+    <img src="{% static 'image5.avif' %}" class="row63 image active-image" />
+    <img src="{% static 'image5.avif' %}"  class="row64 image" />
+    <img src="{% static 'image5.avif' %}" class="row65 image" />
+    <img src="{% static 'image5.avif' %}" class="row66 image" />
+    <img src="{% static 'image5.avif' %}" class="row67 image" />
   </div>
 </div>
+{% comment %} conatier7 {% endcomment %}
+<div class="conatiner7">
+  <div style="display:flex; flex-direction:row;justify-content:space-around;">
+    <div class="row41" style="color:black;">
+      Start by chatting<br />
+      with our AI <br />website builder
+    </div>
+    <div class="row42">
+      <div class="row43" style="color:black; font-size: 1.5vw">
+        Describe your business and preferences and instantly get a fully
+        functional website that you can customize to your liking.
+      </div>
+      <button
+        style="
+          background: black;
+          border-radius: 25px;
+          font-size: 3vh;
+          margin-top: 2vh;
+          padding-right: 2vh;
+          padding-left: 2vh;
+          border:none;
+          color:white;
+          
+        "
+      >
+        Get Started
+      </button>
+    </div>
+  </div>
 
+  <div style="display: flex; padding: 5vh 10vw; gap: 2vw; box-sizing: border-box; justify-content: space-between;">
+    <!-- Card 1 -->
+    <div style="background-color: #014051; padding: 10vw 2vw; border-radius: 10%; color: white; flex: 1; min-width: 20%; max-width: 25%; box-sizing: border-box; height: 25vw; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 2vw; margin-bottom: 2vh;">Engineered for top speed</div>
+        <div style="font-size: 1vw; margin-bottom: 5vh;">Wix sites are designed to ensure fast loading times.</div>
+    </div>
+
+    <!-- Card 2 -->
+    <div style="background-color: #FFC2FE; padding: 10vw 2vw; border-radius: 10%; flex: 1; min-width: 20%; max-width: 25%; box-sizing: border-box; height: 25vw; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 2vw; margin-bottom: 2vh;">Designed for accessibility</div>
+        <div style="font-size: 1vw;">Build an inclusive site that everyone can interact with.</div>
+    </div>
+
+    <!-- Card 3 -->
+    <div style="background-color: #D1E6D1;padding: 10vw 2vw; border-radius: 10%; flex: 1; min-width: 20%; max-width: 25%; box-sizing: border-box; height: 25vw; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 2vw; margin-bottom: 2vh;">Secured by industry experts</div>
+        <div style="font-size: 1vw;">Get enterprise-grade security against threats for you and your visitors.</div>
+    </div>
+
+    <!-- Card 4 -->
+    <div style="background-color: #863A29; padding: 10vw 2vw; border-radius: 10%; color: white; flex: 1; min-width: 20%; max-width: 25%; box-sizing: border-box; height: 25vw; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 2vw; margin-bottom: 2vh;">Built with reliability in mind</div>
+        <div style="font-size: 1vw;">Multi-cloud hosting ensures 99.99% uptime, even during traffic spikes.</div>
+    </div>
+</div>
+</div>
+{% comment %} conatier8 {% endcomment %}
+<div class="container8">
+  <div class="row441">
+    <div style="font-size:10vh; color:#c7c73e;background-color:darkslategrey; ">
+      Thriving with vincentio
+    </div>
+   
+    
+  </div>
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      padding-top:7vh;
+      overflow-x: scroll;
+      width: 100%;
+      background-color:darkslategrey;
+    "
+  >
+  <div>  <video
+    id="myVideo"
+    loop autoplay
+    muted
+    style="margin:3vh; height:50vh;border-radius:50vw; "
+  >
+    <source src="./static/mov_bbb.mp4" type="video/mp4" />
+    <source src="./static/mov_bbb.ogg" type="video/ogg" />
+  </video></div>
+      <div>
+    <img
+      src="{% static 'image3.avif' %}"
+      class="row81"
+      
+    /></div>
+    <div>  <video
+      id="myVideo"
+      loop autoplay
+      muted
+      style="margin:3vh; height:50vh;border-radius:50vw; "
+    >
+      <source src="./static/mov_bbb.mp4" type="video/mp4" />
+      <source src="./static/mov_bbb.ogg" type="video/ogg" />
+    </video></div>
+    <div><img
+      src="{% static 'image3.avif' %}"
+      class="row81"
+      
+    /></div>
+    <div> <img
+      src="{% static 'image3.avif' %}"
+      class="row81"
+      
+    /></div>
+    <div><img
+      src="{% static 'image3.avif' %}"
+      class="row81"
+      
+    /></div>
+    <div><img
+      src="{% static 'image3.avif' %}"
+      class="row81"
+      
+    /></div>
+    
+  </div>
+</div>
+</div>
+
+{% comment %} conatier9 {% endcomment %}
+<div class="conatiner9">
+  <div style="margin-top:10vh">
+    <div>How to create a website for free</div>
+    <div>Follow these 6 simple steps to create a website today.</div>
+    <button>Get Started</button>
+  </div>
+  <div>
+    <ol>
+      <li><b>Pick a platform.</b> Sign up for a secure, reliable, and powerful website builder.</li>
+      <li><b>Start creating.</b> Choose from 900+ free templates or use the AI website builder.</li>
+      <li><b>Start creating.</b> Choose from 900+ free templates or use the AI website builder.</li>
+      <li><b>Optimize for search engines.</b> Increase your site’s visibility with a suite of built-in SEO tools.</li>
+      <li><b>Publish your website.</b> Register and connect a custom domain name and go live.</li>
+      <li><b>Promote and drive traffic.</b> Use built-in marketing tools to grow and expand your reach.</li>
+    </ol>
+  </div>
+</div>
+{% comment %} conatiner 10  {% endcomment %}
+<div class="container10">
+  <div class="row441"  style="display:flex; justify-content:space-around;">
+    <div class="row41">
+      Start by chatting<br />
+      with our AIwebsite builder
+    </div>
+    <div class="row42">
+      <button
+        style="
+          background: black;
+          border-radius: 25vw;
+          font-size: 3vh;
+          margin-top: 2vh;
+          padding-right: 2vh;
+          padding-left: 2vh;
+          border:none;
+          color:white;
+          
+        "
+      >
+        Explore the blog
+      </button>
+    </div>
+  </div>
+  <div
+    style="
+      display: flex;
+      
+      margin-top: 5vh;
+      justify-content: space-around;
+      
+      width: 100%;
+      
+    "
+  >
+    <div style="display: flex ;flex-direction: column; background-color:#d1d1cb;border-radius:2vh;" ><img
+      src="{% static 'image3.avif' %}"
+      class="row91"
+    />
+    <div style=" margin:1vh;font-size:2.5vh;">product1 lemdhask awshd ak uhdasuhd</div>
+    </div>
+
+    <div style="display: flex ;flex-direction: column;background-color:#d1d1cb;border-radius:2vh;"> <img
+      src="{% static 'image3.avif' %}"
+      class="row91"
+     
+    /> <div style=" margin:1vh;font-size:2.5vh;">product1 lemdhask awshd ak uhdasuhd</div>
+  </div >
+    <div style="display: flex ;flex-direction: column;background-color:#d1d1cb;border-radius:2vh;">
+       <img
+      src="{% static 'image3.avif' %}"
+      class="row91"
+      
+    /><div style=" margin:1vh;font-size:2.5vh;">product1 lemdhask awshd ak uhdasuhd</div>
+  </div>
+    
+  </div>
+</div>
+{% comment %} container12 {% endcomment %}
+<div class="container12">
+  <div style="display:flex;margin-left:15vh">We’re here for you 24/7</div>
+
+  <div class="nav-wrapper">
+      <div class="nav-container">
+          <a href="/html/">
+              
+                  <div style="font-size: 3.5vh; font-weight: bold;">Get Answers</div>
+                  <div style="font-size: 2.5vh; opacity: 0.8;">Watch tutorials and read detailed articles.</div>
+              
+              <div style="font-size: 4vh;">→</div>
+          </a>
+
+          <a href="/css/">
+              
+                  <div style="font-size: 3.5vh; font-weight: bold;">Contact Us</div>
+                  <div style="font-size: 2.5vh; opacity: 0.8;">Get support by chat or schedule a call.</div>
+              
+              <div style="font-size: 4vh;">→</div>
+          </a>
+
+          <a href="/js/">
+              
+                  <div style="font-size: 3.5vh; font-weight: bold;">Hire a Pro</div>
+                  <div style="font-size: 2.5vh; opacity: 0.8;">Get help at any stage—from site creation to growth.</div>
+              
+              <div style="font-size: 4vh;">→</div>
+          </a>
+      </div>
+  </div>
+</div>
+<div style=" display:flex; justify-content:center; background-color:#b1caf2;padding-top:50vh ; padding-bottom:20vh;font-size:10vh; border-top-right-radius:10vh;border-top-left-radius:10vh;margin-top:-10vh"> 
+  <div style="width:59vw">Your vision. Your goals.Your website.</div>
+
+</div>
 <script>
-  function updateContent(descriptionId, imageClass) {
+  function updateContent(descriptionId, imageClass, arrowId) {
     // Hide all descriptions
-    document.querySelectorAll('[id^="description"]').forEach(desc => {
-      desc.style.display = "none";
+    document.querySelectorAll('.description').forEach((desc) => {
+        desc.classList.remove('show'); // Remove the 'show' class to hide descriptions
+    });
+
+    // Hide all arrows
+    document.querySelectorAll('.arrow').forEach((arrow) => {
+        arrow.classList.remove('show'); // Remove the 'show' class to hide arrows
     });
 
     // Hide all images
-    document.querySelectorAll('.image').forEach(img => {
-      img.style.display = "none";
+    document.querySelectorAll('.image').forEach((img) => {
+        img.style.display = "none";
     });
 
-    // Show the clicked description
+    // Show the clicked description with animation
     let description = document.getElementById(descriptionId);
     if (description) {
-      description.style.display = "block";
+        description.classList.add('show'); // Add 'show' class to reveal description with animation
+    }
+
+    // Show the corresponding arrow with animation
+    let arrow = document.getElementById(arrowId);
+    if (arrow) {
+        arrow.classList.add('show'); // Add 'show' class to reveal arrow with animation
     }
 
     // Show the corresponding image
-    let image = document.querySelector('.' + imageClass);
+    let image = document.querySelector("." + imageClass);
     if (image) {
-      image.style.display = "block";
+        image.style.display = "block"; // Show the corresponding image
     }
+}
+
+// Function to reset the view when the page loads (i.e., Payments description and arrow visible by default)
+window.onload = function() {
+    // Show the Payments description and arrow by default
+    document.getElementById("description").classList.add('show');
+    document.getElementById("arrow1").classList.add('show');
+}
+let lastScrollTop = 0; // To store the last scroll position
+let maxScroll = 80; // Adjust this value to control when the element should stop moving
+let scrollPosition = 0; // To store the current scroll position
+let scrollSpeedFactor = 0.3; // This factor controls the movement speed, lower values make it slower
+
+window.addEventListener("scroll", function () {
+  const target = document.querySelectorAll(".scroll");
+  let currentScroll = window.pageYOffset; // Get the current scroll position
+  
+  // Calculate the scroll delta (the difference between current and last scroll position)
+  let scrollDelta = currentScroll - lastScrollTop;
+
+  // Apply a scroll speed factor to slow down the movement
+  scrollPosition += scrollDelta * scrollSpeedFactor;
+
+  // Ensure scroll position stays within bounds
+  if (scrollPosition > maxScroll) {
+    scrollPosition = maxScroll;
+  } else if (scrollPosition < 0) {
+    scrollPosition = 0;
   }
+
+  // Update the element positions
+  target.forEach((el) => {
+    let ratey = el.dataset.ratey ? parseFloat(el.dataset.ratey) : 1; // Vertical scroll rate
+    let ratex = el.dataset.ratex ? parseFloat(el.dataset.ratex) : 0; // Horizontal scroll rate
+
+    if (el.dataset.direction === "vertical") {
+      // Move vertically based on scroll position
+      el.style.transform = `translate3d(0, ${scrollPosition * ratey}vh, 0)`;
+    } else {
+      // Move horizontally and vertically based on scroll position
+      let posX = scrollPosition * ratex;
+      let posY = scrollPosition * ratey;
+      el.style.transform = `translate3d(${posX}vw, ${posY}vh, 0)`;
+    }
+  });
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Ensure scroll position doesn't go negative
+});
+
+
 </script>
 {% endblock %}
